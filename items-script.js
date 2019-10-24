@@ -1,5 +1,5 @@
 // JavaScript Document
-var selectedRow = null
+var selecteditem = null
 
 function onFormSubmit() {
         var items = readitem();
