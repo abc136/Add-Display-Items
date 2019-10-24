@@ -2,25 +2,23 @@
 var selectedRow = null
 
 function onFormSubmit() {
-    //if (Titlevalidate()) {
-        var formData = readFormData();
-        if (selectedRow == null){
-            insertNewRecord(formData);
+        var items = readitem();
+        if (selecteditem == null){
+            insertNewitem(items);
 		}   
         resetForm();
-  //  }
 }
 
-function readFormData() {
-    var formData = {};
-    formData["Title"] = document.getElementById("Title").value;
-    formData["Description"] = document.getElementById("Description").value;
-    formData["output"] = document.getElementById("output");
-    formData["Quantity"] = document.getElementById("Quantity").value;
-    return formData;
+function readitem() {
+    var items = {};
+    items["Title"] = document.getElementById("Title").value;
+    items["Description"] = document.getElementById("Description").value;
+    items["output"] = document.getElementById("output");
+    items["Quantity"] = document.getElementById("Quantity").value;
+    return items;
 }
 
-function insertNewRecord(data) {
+function insertNewitem(data) {
     var table = document.getElementById("iTemsList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
     cell1 = newRow.insertCell(0);
@@ -39,26 +37,6 @@ function resetForm() {
     document.getElementById("Title").value = "";
     document.getElementById("Description").value = "";
     document.getElementById("Quantity").value = "";
-    selectedRow = null;
+    selecteditem = null;
 }
-
-
-//function Titlevalidate() {
-//    isValid = true;
-//    if (document.getElementById("Title").value == "") {
-//        isValid = false;
-//        document.getElementById("TitleValidationError").classList.remove("hide");
-//    } else {
-//        isValid = true;
-//        if (!document.getElementById("TitleValidationError").classList.contains("hide"))
-//            document.getElementById("TitleValidationError").classList.add("hide");
-//    }
-//    return isValid;
-//}
-
-
-
-
-
-
 
